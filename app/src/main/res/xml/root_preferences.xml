@@ -7,4 +7,12 @@
         android:summary="Turn this option on or off"
         android:title="Settings option" />
 
+    <ListPreference
+        android:key="list"
+        android:title="Color list"
+        app:useSimpleSummaryProvider="true"
+        android:entries="@array/entries"
+        android:entryValues="@array/entry_values"
+        android:dependency="example_switch"/>
+
 </PreferenceScreen>

@@ -1,7 +1,10 @@
 package com.example.preferencesscreenexample
 
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
@@ -54,6 +57,22 @@ class SettingsActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferen
                 val test = sharedPreferences!!.getBoolean("example_switch", false)
                 Toast.makeText(this, test.toString(), Toast.LENGTH_SHORT).show()
             }
+            "list" ->{
+                val test = sharedPreferences!!.getString("list", "")
+                val settingsView = findViewById<View>(R.id.settings)
+                if(test != null){
+                    if(test == "1"){
+                        settingsView.setBackgroundColor(Color.RED)
+                    }
+                    if(test == "2"){
+                        settingsView.setBackgroundColor(Color.GREEN)
+                    }
+                    if(test == "3"){
+                        settingsView.setBackgroundColor(Color.BLUE)
+                    }
+                }
+            }
+
         }
     }
 }
